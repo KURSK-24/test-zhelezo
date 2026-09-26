@@ -268,6 +268,22 @@ footer{padding:32px 0 100px;text-align:center;font-size:.85rem;color:var(--muted
   </div>
 </section>
 
+<!-- PAID -->
+<section class="hidden" id="paidBox" style="padding-top:32px;padding-bottom:0">
+  <div class="wrap">
+    <div class="price-card">
+      <span class="kicker">Оплата прошла</span>
+      <h2 style="margin-bottom:8px">Спасибо! Остался последний шаг</h2>
+      <p>Отправь Людмиле свой результат теста: она посмотрит ответы заранее и предложит время встречи</p>
+      <div class="actions">
+        <button class="btn pdf" type="button" data-pdf="save">Сохранить результат в PDF</button>
+        <a class="btn tg-link" href="https://t.me/Ovchinnikova_slim" target="_blank" rel="noopener" data-goal="paid_msg">Написать Людмиле</a>
+      </div>
+      <p class="muted" style="font-size:.88rem;margin:12px 0 0">Сообщение с баллами и ответами уже подставлено. PDF прикрепи скрепкой 📎</p>
+    </div>
+  </div>
+</section>
+
 <!-- RESULT -->
 <section class="result" id="result">
   <div class="wrap stack">
@@ -288,7 +304,7 @@ footer{padding:32px 0 100px;text-align:center;font-size:.85rem;color:var(--muted
       </div>
       <div class="actions">
         <button class="btn pdf" type="button" data-pdf="save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/></svg>Сохранить результат в PDF</button>
-        <a class="btn tg-link" href="https://t.me/Ovchinnikova_slim" target="_blank" rel="noopener" data-goal="cta_click"><span>Записаться за <span class="price-now">990</span> ₽</span></a>
+        <a class="btn pay-link" href="https://t.me/Ovchinnikova_slim" target="_blank" rel="noopener" data-goal="pay_click"><span><span class="pay-word">Записаться</span> за <span class="price-now">990</span> ₽</span></a>
       </div>
       <p class="muted" style="font-size:.85rem;margin:10px 0 0">Сохрани файл и отправь его Людмиле: она посмотрит ответы до встречи</p>
       <div class="inapp hidden" id="inAppHint"><b>Чтобы сохранить PDF</b>, открой эту страницу в обычном браузере: нажми ⋯ или ⋮ вверху справа и выбери «Открыть в Safari» или «Открыть в браузере». Или просто напиши Людмиле кнопкой ниже: все твои ответы уже будут в сообщении</div>
@@ -323,7 +339,7 @@ footer{padding:32px 0 100px;text-align:center;font-size:.85rem;color:var(--muted
     <div style="text-align:center">
       <div class="actions">
         <button class="btn pdf" type="button" data-pdf="save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/></svg>Сохранить результат в PDF</button>
-        <a class="btn tg-link" href="https://t.me/Ovchinnikova_slim" target="_blank" rel="noopener" data-goal="cta_click"><span>Записаться за <span class="price-now">990</span> ₽</span></a>
+        <a class="btn pay-link" href="https://t.me/Ovchinnikova_slim" target="_blank" rel="noopener" data-goal="pay_click"><span><span class="pay-word">Записаться</span> за <span class="price-now">990</span> ₽</span></a>
       </div>
       <br><button class="btn ghost" id="restart">Пройти заново</button>
     </div>
@@ -396,7 +412,7 @@ footer{padding:32px 0 100px;text-align:center;font-size:.85rem;color:var(--muted
       <div class="price-note" id="priceNote">Специальная цена для тех, кто прошёл тест. Действует 24 часа</div>
       <div class="timer" id="timer"><span id="tH">24</span>:<span id="tM">00</span>:<span id="tS">00</span></div>
       <div class="timer-l" id="timerL">осталось до конца специальной цены</div>
-      <a class="btn tg-link" href="https://t.me/Ovchinnikova_slim" target="_blank" rel="noopener" data-goal="cta_click"><span>Записаться за <span class="price-now">990</span> ₽</span></a>
+      <a class="btn pay-link" href="https://t.me/Ovchinnikova_slim" target="_blank" rel="noopener" data-goal="pay_click"><span><span class="pay-word">Записаться</span> за <span class="price-now">990</span> ₽</span></a>
       <p class="price-dis">Это не диагноз и не замена врачу. Диагноз ставит врач по анализам. Людмила поможет разобраться в анализах, питании и следующих шагах</p>
     </div>
 
@@ -420,7 +436,11 @@ footer{padding:32px 0 100px;text-align:center;font-size:.85rem;color:var(--muted
 
     <div class="cta-box" id="cta">
       <h2 style="margin-bottom:10px">Записаться на экспресс-диагностику за <span class="price-now">990</span> ₽</h2>
-      <p class="muted">Два шага, и Людмила ещё до встречи увидит все твои ответы и сможет сразу назначить время</p>
+      <p class="muted">Людмила ещё до встречи увидит все твои ответы и сможет сразу назначить время</p>
+      <div class="pay-only hidden">
+        <div class="cta-step"><span class="step-n">1</span>Оплати диагностику</div>
+        <a class="btn pay-link" href="https://t.me/Ovchinnikova_slim" target="_blank" rel="noopener" data-goal="pay_click"><span>Оплатить <span class="price-now">990</span> ₽</span></a>
+      </div>
       <div class="cta-step"><span class="step-n">1</span>Сохрани свой результат в PDF</div>
       <input class="name-in" id="nameIn" type="text" placeholder="Как тебя зовут (для файла)" autocomplete="given-name">
       <button class="btn pdf pdf-btn" type="button" data-pdf="save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/></svg>Скачать мой результат (PDF)</button>
@@ -653,6 +673,10 @@ document.getElementById('restart').addEventListener('click', function(){
 var lastMessage = '';
 var R = null;
 var PRICE_NOW = 990, PRICE_REG = 2990, PROMO_HOURS = 24;
+// Ссылки на оплату в Продамусе: одна на 990 ₽, вторая на полную цену. Пока пусто, кнопки ведут в Telegram
+var PAY_URL_NOW = '', PAY_URL_REG = '';
+var PAID = /[?&]paid=1/.test(location.search);
+function payUrl(){ return promoActive() ? PAY_URL_NOW : PAY_URL_REG; }
 function fmtPrice(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' '); }
 function promoDeadline(){
   var d = null;
@@ -797,7 +821,14 @@ function render(){
   var code = answers.map(function(v,i){ return (i%5===0 && i ? '| ' : '')+v; }).join(' ');
   lastMessage = 'Здравствуйте, Людмила! Прошла экспресс-тест на железо: '+sum+' '+plural(sum,'балл','балла','баллов')+(band!=='low' && top.p>=50 ? ', больше всего сигналов в зоне «'+Z[top.k].name.toLowerCase()+'»' : '')+'. Мои ответы по порядку: '+code+'. Хочу записаться на экспресс-диагностику за '+fmtPrice(currentPrice())+' ₽ (тест пройден '+passedStr+'). PDF с результатом прикрепляю';
   R = {sum:sum, band:band, bandLabel:B[band][0], bandText:B[band][1], pName:pName, pText:pText, zones:zoneList, flags:flags};
-  document.querySelectorAll('.tg-link').forEach(function(a){ a.href = 'https://t.me/'+TG_USER+'?text='+encodeURIComponent(lastMessage); });
+  if(PAID) lastMessage = lastMessage.replace('Прошла экспресс-тест на железо', 'Оплатила экспресс-диагностику по железодефициту. Мой тест на железо').replace(/ Хочу записаться на экспресс-диагностику за [^)]*\)\./, '');
+  var tgHref = 'https://t.me/'+TG_USER+'?text='+encodeURIComponent(lastMessage);
+  document.querySelectorAll('.tg-link').forEach(function(a){ a.href = tgHref; });
+  var pu = payUrl();
+  document.querySelectorAll('.pay-link').forEach(function(a){ a.href = pu || tgHref; });
+  document.querySelectorAll('.pay-word').forEach(function(el){ el.textContent = pu ? 'Оплатить' : 'Записаться'; });
+  document.querySelectorAll('.pay-only').forEach(function(el){ el.classList.toggle('hidden', !pu); });
+  var n = 0; document.querySelectorAll('#cta .cta-step').forEach(function(st){ if(!st.closest('.pay-only.hidden')) st.querySelector('.step-n').textContent = ++n; });
 
   document.getElementById('result').classList.add('show');
   document.getElementById('offer').classList.remove('hidden');
@@ -921,6 +952,14 @@ document.addEventListener('click', function(e){
   }).catch(function(){ b.disabled = false; b.innerHTML = label; toast('Не получилось собрать файл. Попробуй ещё раз'); pdfPromise = null; });
 });
 if(IN_APP) setTimeout(inAppHint, 0);
+if(PAID && answers.indexOf(null)===-1){
+  setTimeout(function(){
+    render();
+    document.getElementById('paidBox').classList.remove('hidden');
+    goal('paid_return');
+    setTimeout(function(){ document.getElementById('paidBox').scrollIntoView({behavior:'smooth'}); }, 300);
+  }, 0);
+}
 try{
   var probe = new File(['x'], 'x.pdf', {type:'application/pdf'});
   if(canShareFile(probe)){
