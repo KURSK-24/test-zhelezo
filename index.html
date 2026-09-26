@@ -51,6 +51,12 @@ section{padding:56px 0}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:inherit;font-weight:800;font-size:1.05rem;border:0;cursor:pointer;border-radius:999px;padding:17px 30px;background:var(--wine);color:#fff;text-decoration:none;box-shadow:0 12px 24px -12px rgba(122,22,49,.7);transition:transform .15s ease,background .15s ease}
 .btn:hover{background:var(--wine-2);transform:translateY(-1px)}
 .btn:active{transform:translateY(1px)}
+.inapp{margin-top:14px;background:var(--butter);border:1px solid #F0DDA8;color:var(--butter-ink);border-radius:14px;padding:12px 14px;font-size:.9rem;text-align:left}
+.btn.pdf{background:#3F5E45;box-shadow:0 12px 24px -12px rgba(63,94,69,.7)}
+.btn.pdf:hover{background:#4E7456}
+.actions{display:flex;flex-direction:column;gap:10px;align-items:center;margin-top:22px}
+.actions .btn{width:100%;max-width:420px;padding:15px 22px}
+@media(min-width:720px){.actions{flex-direction:row;justify-content:center}.actions .btn{width:auto}}
 .btn.ghost{background:transparent;color:var(--wine);box-shadow:none;border:2px solid var(--wine)}
 .btn.ghost:hover{background:var(--wine-soft)}
 .btn[disabled]{opacity:.45;cursor:not-allowed;transform:none}
@@ -170,7 +176,7 @@ details p{padding-bottom:14px;margin:0}
 .cta-box small{display:block;color:var(--muted);margin-top:14px;font-size:.88rem}
 .copy{margin-top:14px;font-size:.88rem;background:none;border:0;color:var(--wine);text-decoration:underline;cursor:pointer;font:inherit;font-weight:600}
 .sticky-cta{position:fixed;left:12px;right:12px;bottom:12px;z-index:30;display:none}
-.sticky-cta .btn{width:100%}
+.sticky-cta .btn{width:100%;box-shadow:0 0 0 3px #fff,0 12px 28px -10px rgba(58,31,40,.55)}
 .sticky-cta.show{display:block}
 @media(min-width:720px){.sticky-cta{left:auto;right:24px;bottom:24px;width:360px}}
 footer{padding:32px 0 100px;text-align:center;font-size:.85rem;color:var(--muted)}
@@ -261,6 +267,12 @@ footer{padding:32px 0 100px;text-align:center;font-size:.85rem;color:var(--muted
         <h3 id="profileName"></h3>
         <p id="profileText" style="margin:0"></p>
       </div>
+      <div class="actions">
+        <button class="btn pdf" type="button" data-pdf="save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/></svg>Сохранить результат в PDF</button>
+        <a class="btn tg-link" href="https://t.me/Ovchinnikova_slim" target="_blank" rel="noopener" data-goal="cta_click">Записаться на диагностику</a>
+      </div>
+      <p class="muted" style="font-size:.85rem;margin:10px 0 0">Сохрани файл и отправь его Людмиле: она посмотрит ответы до встречи</p>
+      <div class="inapp hidden" id="inAppHint"><b>Чтобы сохранить PDF</b>, открой эту страницу в обычном браузере: нажми ⋯ или ⋮ вверху справа и выбери «Открыть в Safari» или «Открыть в браузере». Или просто напиши Людмиле кнопкой ниже: все твои ответы уже будут в сообщении</div>
     </div>
 
     <div class="card">
@@ -290,8 +302,11 @@ footer{padding:32px 0 100px;text-align:center;font-size:.85rem;color:var(--muted
     </div>
 
     <div style="text-align:center">
-      <button class="btn pdf-btn" type="button" data-pdf="save">Сохранить результат в PDF</button>
-      <br><br><button class="btn ghost" id="restart">Пройти заново</button>
+      <div class="actions">
+        <button class="btn pdf" type="button" data-pdf="save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/></svg>Сохранить результат в PDF</button>
+        <a class="btn tg-link" href="https://t.me/Ovchinnikova_slim" target="_blank" rel="noopener" data-goal="cta_click">Записаться на диагностику</a>
+      </div>
+      <br><button class="btn ghost" id="restart">Пройти заново</button>
     </div>
   </div>
 </section>
@@ -367,10 +382,10 @@ footer{padding:32px 0 100px;text-align:center;font-size:.85rem;color:var(--muted
       <p class="muted">Два шага, и Людмила ещё до встречи увидит все твои ответы и сможет сразу назначить время</p>
       <div class="cta-step"><span class="step-n">1</span>Сохрани свой результат в PDF</div>
       <input class="name-in" id="nameIn" type="text" placeholder="Как тебя зовут (для файла)" autocomplete="given-name">
-      <button class="btn ghost pdf-btn" type="button" data-pdf="save">Скачать мой результат (PDF)</button>
-      <button class="btn ghost pdf-btn hidden" id="shareBtn" type="button" data-pdf="share">Отправить PDF в Telegram</button>
+      <button class="btn pdf pdf-btn" type="button" data-pdf="save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/></svg>Скачать мой результат (PDF)</button>
+      <button class="btn pdf pdf-btn hidden" id="shareBtn" type="button" data-pdf="share">Отправить PDF в Telegram</button>
       <div class="cta-step" style="margin-top:22px"><span class="step-n">2</span>Напиши Людмиле и прикрепи файл</div>
-      <a class="btn" id="ctaBtn" href="https://t.me/Ovchinnikova_slim" target="_blank" rel="noopener" data-goal="cta_click">Написать Людмиле</a>
+      <a class="btn tg-link" id="ctaBtn" href="https://t.me/Ovchinnikova_slim" target="_blank" rel="noopener" data-goal="cta_click">Написать Людмиле</a>
       <p class="muted" style="font-size:.88rem;margin:12px 0 0">Сообщение с баллами и ответами уже подставлено. Файл прикрепи скрепкой 📎 в чате</p>
       <button class="copy" id="copyBtn" type="button">Текст не подставился? Скопировать сообщение</button>
       <small>Telegram: @Ovchinnikova_slim</small>
@@ -707,12 +722,13 @@ function render(){
   var code = answers.map(function(v,i){ return (i%5===0 && i ? '| ' : '')+v; }).join(' ');
   lastMessage = 'Здравствуйте, Людмила! Хочу консультацию по железодефициту. Прошла экспресс-тест: '+sum+' '+plural(sum,'балл','балла','баллов')+(band!=='low' && top.p>=50 ? ', больше всего сигналов в зоне «'+Z[top.k].name.toLowerCase()+'»' : '')+'. Мои ответы по порядку: '+code+'. PDF с результатом прикрепляю';
   R = {sum:sum, band:band, bandLabel:B[band][0], bandText:B[band][1], pName:pName, pText:pText, zones:zoneList, flags:flags};
-  document.getElementById('ctaBtn').href = 'https://t.me/'+TG_USER+'?text='+encodeURIComponent(lastMessage);
+  document.querySelectorAll('.tg-link').forEach(function(a){ a.href = 'https://t.me/'+TG_USER+'?text='+encodeURIComponent(lastMessage); });
 
   document.getElementById('result').classList.add('show');
   document.getElementById('offer').classList.remove('hidden');
   document.getElementById('stickyCta').classList.add('show');
   goal('test_complete', {score:sum, band:band, profile:pName});
+  pdfBlob = null; pdfPromise = null; setTimeout(preparePdf, 900);
   setTimeout(function(){ document.getElementById('result').scrollIntoView({behavior:'smooth'}); }, 50);
 }
 
@@ -780,26 +796,60 @@ function makePdf(){
   return loadH2P().then(function(){ return html2pdf().set(opt).from(buildReport(), 'string').outputPdf('blob'); });
 }
 function toast(msg){ var t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); setTimeout(function(){ t.classList.remove('show'); }, 2400); }
+var UA = navigator.userAgent || '';
+var IS_IOS = /iPhone|iPad|iPod/.test(UA) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1);
+var IN_APP = /Instagram|FBAN|FBAV|Telegram|VKClient|OKApp|YaBrowser\/.*Mobile.*YaApp|; wv\)/.test(UA);
+var IS_MOBILE = IS_IOS || /Android/.test(UA);
+function canShareFile(file){ try{ return IS_MOBILE && !!(navigator.canShare && navigator.canShare({files:[file]})); }catch(e){ return false; } }
+function inAppHint(){
+  var el = document.getElementById('inAppHint'); if(el) el.classList.remove('hidden');
+}
+// PDF собирается заранее: меню «Поделиться» открывается только сразу после нажатия
+var pdfBlob = null, pdfPromise = null, pdfTimer = null;
+function preparePdf(){
+  pdfBlob = null;
+  var my = pdfPromise = makePdf().then(function(bl){ if(my===pdfPromise) pdfBlob = bl; return bl; });
+  my.catch(function(){});
+  return my;
+}
+function schedulePdf(){ clearTimeout(pdfTimer); pdfTimer = setTimeout(preparePdf, 700); }
+document.getElementById('nameIn').addEventListener('input', schedulePdf);
+function deliver(blob){
+  var file = new File([blob], fileName(), {type:'application/pdf'});
+  if(canShareFile(file)){
+    goal('pdf_share');
+    navigator.share({files:[file], title:'Результат теста на железо'}).catch(function(err){
+      if(err && err.name==='AbortError') return;
+      if(IN_APP){ inAppHint(); toast('Этот браузер не сохраняет файлы. Открой страницу в Safari или Chrome'); }
+      else { window.location.href = URL.createObjectURL(blob); }
+    });
+    return;
+  }
+  var url = URL.createObjectURL(blob);
+  if(IN_APP){ inAppHint(); goal('pdf_inapp'); toast('Этот браузер не сохраняет файлы. Открой страницу в Safari или Chrome'); return; }
+  if(IS_IOS){ window.location.href = url; goal('pdf_open'); return; }
+  var a = document.createElement('a');
+  a.href = url; a.download = fileName(); document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(function(){ URL.revokeObjectURL(url); }, 60000);
+  goal('pdf_save'); toast('Файл сохранён. Теперь напиши Людмиле');
+}
 document.addEventListener('click', function(e){
   var b = e.target.closest('[data-pdf]'); if(!b || !R) return;
-  var mode = b.dataset.pdf, label = b.textContent;
+  if(pdfBlob){ deliver(pdfBlob); return; }
+  var label = b.innerHTML;
   b.disabled = true; b.textContent = 'Готовлю файл...';
-  makePdf().then(function(blob){
-    var file = new File([blob], fileName(), {type:'application/pdf'});
-    if(mode==='share' && navigator.canShare && navigator.canShare({files:[file]})){
-      goal('pdf_share');
-      return navigator.share({files:[file], title:'Результат теста на железо'}).catch(function(){});
-    }
-    var url = URL.createObjectURL(blob), a = document.createElement('a');
-    a.href = url; a.download = fileName(); document.body.appendChild(a); a.click(); a.remove();
-    setTimeout(function(){ URL.revokeObjectURL(url); }, 4000);
-    goal('pdf_save'); toast('Файл сохранён. Теперь шаг 2: напиши Людмиле');
-  }).catch(function(){ toast('Не получилось собрать файл. Попробуй ещё раз'); })
-    .then(function(){ b.disabled = false; b.textContent = label; });
+  (pdfPromise || preparePdf()).then(function(blob){
+    b.disabled = false;
+    if(IS_MOBILE){ b.textContent = 'Файл готов, нажми ещё раз'; setTimeout(function(){ b.innerHTML = label; }, 8000); }
+    else { b.innerHTML = label; deliver(blob); }
+  }).catch(function(){ b.disabled = false; b.innerHTML = label; toast('Не получилось собрать файл. Попробуй ещё раз'); pdfPromise = null; });
 });
+if(IN_APP) setTimeout(inAppHint, 0);
 try{
   var probe = new File(['x'], 'x.pdf', {type:'application/pdf'});
-  if(navigator.canShare && navigator.canShare({files:[probe]})) document.getElementById('shareBtn').classList.remove('hidden');
+  if(canShareFile(probe)){
+    document.querySelectorAll('[data-pdf="save"]').forEach(function(btn){ btn.innerHTML = btn.innerHTML.replace(/Сохранить результат в PDF|Скачать мой результат \(PDF\)/, 'Сохранить или отправить PDF'); });
+  }
 }catch(e){}
 
 document.getElementById('copyBtn').addEventListener('click', function(){
@@ -810,8 +860,14 @@ document.getElementById('copyBtn').addEventListener('click', function(){
 
 // прячем липкую кнопку, когда видна основная
 if('IntersectionObserver' in window){
-  var io = new IntersectionObserver(function(en){ en.forEach(function(x){ document.getElementById('stickyCta').style.opacity = x.isIntersecting ? '0' : '1'; document.getElementById('stickyCta').style.pointerEvents = x.isIntersecting ? 'none' : 'auto'; }); });
+  var seen = new Set();
+  var io = new IntersectionObserver(function(en){
+    en.forEach(function(x){ if(x.isIntersecting) seen.add(x.target); else seen.delete(x.target); });
+    var st = document.getElementById('stickyCta');
+    st.style.opacity = seen.size ? '0' : '1'; st.style.pointerEvents = seen.size ? 'none' : 'auto';
+  });
   io.observe(document.getElementById('cta'));
+  document.querySelectorAll('.actions').forEach(function(el){ io.observe(el); });
 }
 </script>
 </body>
