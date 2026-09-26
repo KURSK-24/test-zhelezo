@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Хватает ли тебе железа? Экспресс-тест</title>
+<meta name="description" content="Экспресс-тест на 5 минут от нутрициолога Людмилы Овчинниковой: 25 вопросов и личный разбор, стоит ли сдавать анализы на железо">
+<meta property="og:title" content="Хватает ли тебе железа? Экспресс-тест на 5 минут">
+<meta property="og:description" content="25 вопросов о самочувствии и личный разбор результата от нутрициолога Людмилы Овчинниковой">
+<meta name="theme-color" content="#FBF3F1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Яндекс.Метрика: вставить сюда код счётчика и прописать номер в YM_ID ниже в скрипте -->
+
+<style>
+:root{
+  color-scheme: light;
+  --bg:#FBF3F1;
+  --bg-2:#F6E7E6;
+  --card:#FFFFFF;
+  --wine:#7A1631;
+  --wine-2:#9E2A48;
+  --wine-soft:#F4DCE1;
+  --rose:#EFC9D1;
+  --ink:#3A1F28;
+  --muted:#7E6269;
+  --line:#EBD6D9;
+  --sage:#E3ECE3;
+  --sage-ink:#3F5E45;
+  --butter:#FBF0D6;
+  --butter-ink:#7A5A12;
+  --blush:#FBE3E6;
+  --radius:22px;
+  --shadow:0 10px 30px -18px rgba(122,22,49,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:17px;line-height:1.6}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;color:var(--wine);line-height:1.15;margin:0 0 .5em}
+h1{font-size:clamp(2.3rem,7vw,3.6rem);font-weight:800;letter-spacing:-.01em}
+h2{font-size:clamp(1.7rem,5vw,2.4rem);font-weight:700}
+h3{font-size:1.25rem;font-weight:700}
+p{margin:0 0 1em}
+a{color:var(--wine)}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+section{padding:56px 0}
+.kicker{display:inline-block;font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--wine-2);background:var(--wine-soft);padding:6px 12px;border-radius:999px;margin-bottom:16px}
+.muted{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:inherit;font-weight:800;font-size:1.05rem;border:0;cursor:pointer;border-radius:999px;padding:17px 30px;background:var(--wine);color:#fff;text-decoration:none;box-shadow:0 12px 24px -12px rgba(122,22,49,.7);transition:transform .15s ease,background .15s ease}
+.btn:hover{background:var(--wine-2);transform:translateY(-1px)}
+.btn:active{transform:translateY(1px)}
+.btn.ghost{background:transparent;color:var(--wine);box-shadow:none;border:2px solid var(--wine)}
+.btn.ghost:hover{background:var(--wine-soft)}
+.btn[disabled]{opacity:.45;cursor:not-allowed;transform:none}
+.card{background:var(--card);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);border:1px solid var(--line)}
+
+/* HERO */
+.hero{padding:40px 0 48px;background:radial-gradient(120% 80% at 90% 0%,var(--rose) 0%,rgba(239,201,209,0) 55%),radial-gradient(90% 70% at 0% 100%,var(--sage) 0%,rgba(227,236,227,0) 60%),var(--bg)}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:24px;align-items:center}
+.hero-art{max-width:240px;margin:0 auto}
+.hero p.lead{font-size:1.15rem;color:var(--ink);max-width:560px}
+.author{display:flex;align-items:center;gap:14px;margin-top:28px}
+.avatar{width:52px;height:52px;border-radius:50%;background:var(--wine);color:#fff;display:grid;place-items:center;font-family:"Playfair Display",serif;font-weight:700;font-size:1.1rem;flex:none}
+.author b{display:block;color:var(--wine)}
+.author span{font-size:.9rem;color:var(--muted)}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 28px;padding:0;list-style:none}
+.facts li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.9rem;font-weight:600;color:var(--wine)}
+@media(min-width:720px){.hero-grid{grid-template-columns:1.4fr 1fr}.hero-art{max-width:300px}}
+
+/* INTRO */
+.questions-list{font-family:"Playfair Display",serif;font-size:1.3rem;color:var(--wine);line-height:1.4;margin-bottom:20px}
+.note{background:var(--butter);border:1px solid #F0DDA8;color:var(--butter-ink);border-radius:16px;padding:16px 18px;font-size:.95rem}
+.scale{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:18px}
+.scale div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 4px;text-align:center;font-size:.8rem;color:var(--muted);line-height:1.25}
+.scale b{display:block;font-size:1.3rem;color:var(--wine);font-family:"Playfair Display",serif}
+
+/* TEST */
+.test{background:var(--bg-2)}
+.progress{position:sticky;top:0;z-index:20;background:rgba(251,243,241,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.progress .wrap{display:flex;align-items:center;gap:14px;padding-top:10px;padding-bottom:10px}
+.bar{flex:1;height:8px;background:var(--wine-soft);border-radius:999px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--wine-2),var(--wine));border-radius:999px;transition:width .3s ease}
+.progress small{font-weight:700;color:var(--wine);white-space:nowrap;font-size:.85rem}
+.q{background:var(--card);border-radius:18px;padding:18px;margin-bottom:12px;border:2px solid transparent;transition:border-color .2s ease,box-shadow .2s ease}
+.q.done{border-color:var(--rose)}
+.q.missed{border-color:var(--wine-2);box-shadow:0 0 0 4px var(--wine-soft)}
+.q-title{display:flex;gap:12px;font-weight:600;margin-bottom:14px}
+.q-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--wine-soft);color:var(--wine);font-weight:800;font-size:.85rem;display:grid;place-items:center}
+.q.done .q-num{background:var(--wine);color:#fff}
+.opts{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.opt{font:inherit;border:1.5px solid var(--line);background:#FFF9F9;border-radius:14px;padding:9px 2px 8px;cursor:pointer;color:var(--ink);line-height:1.15;transition:all .15s ease;min-height:58px}
+.opt b{display:block;font-size:1.15rem;color:var(--wine);font-family:"Playfair Display",serif}
+.opt span{font-size:.7rem;color:var(--muted);font-weight:600}
+.opt:hover{border-color:var(--wine-2)}
+.opt[aria-checked="true"]{background:var(--wine);border-color:var(--wine)}
+.opt[aria-checked="true"] b,.opt[aria-checked="true"] span{color:#fff}
+.test-foot{text-align:center;margin-top:28px}
+.test-foot p{font-size:.9rem;margin-top:12px}
+
+/* RESULT */
+.result{display:none}
+.result.show{display:block;animation:rise .5s ease}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.score-card{text-align:center;padding:32px 20px}
+.gauge{width:100%;max-width:300px;margin:0 auto 8px;display:block}
+.band{display:inline-block;font-weight:800;border-radius:999px;padding:8px 16px;margin:6px 0 14px;font-size:.95rem}
+.band.low{background:var(--sage);color:var(--sage-ink)}
+.band.mid{background:var(--butter);color:var(--butter-ink)}
+.band.high{background:var(--blush);color:var(--wine)}
+.profile{margin-top:20px}
+.profile .tag{font-size:.8rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.zones{display:grid;gap:12px;margin-top:8px}
+.zone{display:grid;grid-template-columns:1fr;gap:6px}
+.zone-top{display:flex;justify-content:space-between;font-size:.92rem;font-weight:600}
+.zone-top span{color:var(--muted);font-weight:700}
+.zone .bar{height:10px}
+.signals{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.signals li{background:#FFF9F9;border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.signals b{color:var(--wine);display:block;margin-bottom:4px}
+.flag{background:var(--blush);border:1.5px solid var(--wine-2);border-radius:18px;padding:18px 20px}
+.flag h3{margin-bottom:8px}
+.flag ul{margin:0;padding-left:20px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.steps li{counter-increment:s;position:relative;padding:14px 16px 14px 58px;background:var(--card);border-radius:16px;border:1px solid var(--line)}
+.steps li::before{content:counter(s);position:absolute;left:14px;top:13px;width:32px;height:32px;border-radius:50%;background:var(--wine);color:#fff;font-weight:800;display:grid;place-items:center;font-size:.95rem}
+.stack{display:grid;gap:18px}
+
+/* OFFER */
+.offer{background:var(--card);border-top:1px solid var(--line)}
+.offer-hero{background:linear-gradient(160deg,var(--wine) 0%,#5A0F24 100%);color:#fff;border-radius:28px;padding:32px 24px;position:relative;overflow:hidden}
+.offer-hero h2{color:#fff}
+.offer-hero p{color:#F6DDE3}
+.offer-hero .kicker{background:rgba(255,255,255,.14);color:#fff}
+.offer-hero svg{position:absolute;right:-30px;bottom:-30px;width:180px;opacity:.16}
+.story p{font-size:1.05rem}
+.quote{font-family:"Playfair Display",serif;font-size:1.35rem;color:var(--wine);border-left:4px solid var(--rose);padding:4px 0 4px 18px;margin:24px 0}
+.mistakes{display:grid;gap:12px;grid-template-columns:1fr}
+.mistake{background:var(--bg);border-radius:18px;padding:20px;border:1px solid var(--line)}
+.mistake .x{width:34px;height:34px;border-radius:50%;background:var(--wine-soft);color:var(--wine);display:grid;place-items:center;font-weight:800;margin-bottom:10px}
+@media(min-width:720px){.mistakes{grid-template-columns:repeat(3,1fr)}}
+.get{display:grid;gap:10px;grid-template-columns:1fr;list-style:none;padding:0;margin:0}
+.get li{display:flex;gap:12px;align-items:flex-start;background:var(--sage);border-radius:16px;padding:14px 16px;color:#233b28;font-weight:600}
+.get li svg{flex:none;margin-top:3px}
+@media(min-width:720px){.get{grid-template-columns:1fr 1fr}}
+.expert{display:flex;gap:18px;align-items:center;background:var(--bg);border-radius:22px;padding:22px;border:1px solid var(--line)}
+.expert .avatar{width:72px;height:72px;font-size:1.5rem}
+details{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:0 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700;color:var(--wine);padding:16px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--wine-2)}
+details[open] summary::after{content:"−"}
+details p{padding-bottom:14px;margin:0}
+.cta-box{text-align:center;background:linear-gradient(180deg,var(--blush),var(--bg));border-radius:28px;padding:36px 20px;border:1px solid var(--rose)}
+.cta-box .btn{width:100%;max-width:420px}
+.cta-box small{display:block;color:var(--muted);margin-top:14px;font-size:.88rem}
+.copy{margin-top:14px;font-size:.88rem;background:none;border:0;color:var(--wine);text-decoration:underline;cursor:pointer;font:inherit;font-weight:600}
+.sticky-cta{position:fixed;left:12px;right:12px;bottom:12px;z-index:30;display:none}
+.sticky-cta .btn{width:100%}
+.sticky-cta.show{display:block}
+@media(min-width:720px){.sticky-cta{left:auto;right:24px;bottom:24px;width:360px}}
+footer{padding:32px 0 100px;text-align:center;font-size:.85rem;color:var(--muted)}
+.hidden{display:none!important}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:12px;font-size:.9rem;opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.show{opacity:1}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker">Экспресс-тест · 5 минут</span>
+      <h1>Хватает ли тебе железа?</h1>
+      <p class="lead">25 вопросов о том, как ты себя чувствуешь. В конце получишь личный разбор своих ответов: какие сигналы похожи на нехватку железа, что сдать и с чего начать</p>
+      <ul class="facts">
+        <li>25 вопросов</li><li>Результат сразу</li><li>Бесплатно</li>
+      </ul>
+      <a href="#intro" class="btn" data-goal="test_start">Пройти тест</a>
+      <div class="author">
+        <div class="avatar">ЛО</div>
+        <div><b>Людмила Овчинникова</b><span>нутрициолог · диплом МИИН</span></div>
+      </div>
+    </div>
+    <svg class="hero-art" viewBox="0 0 300 300" role="img" aria-label="Капля крови с символом железа">
+      <circle cx="150" cy="150" r="140" fill="#FFFFFF" stroke="#E6C58F" stroke-width="2"/>
+      <circle cx="62" cy="92" r="20" fill="#F4DCE1"/><circle cx="62" cy="92" r="9" fill="#FBF3F1"/>
+      <circle cx="238" cy="206" r="24" fill="#F4DCE1"/><circle cx="238" cy="206" r="11" fill="#FBF3F1"/>
+      <circle cx="232" cy="84" r="12" fill="#E3ECE3"/>
+      <circle cx="70" cy="214" r="10" fill="#E3ECE3"/>
+      <path d="M150 58 C150 58 88 138 88 180 a62 62 0 0 0 124 0 C212 138 150 58 150 58Z" fill="#7A1631"/>
+      <path d="M118 178 a34 34 0 0 0 20 32" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="7" stroke-linecap="round"/>
+      <text x="150" y="196" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-weight="700" font-size="46" fill="#fff">Fe</text>
+    </svg>
+  </div>
+</header>
+
+<!-- INTRO -->
+<section id="intro">
+  <div class="wrap">
+    <h2>Прежде чем начать</h2>
+    <p class="questions-list">Постоянно хочется спать, даже если выспалась? Волосы лезут сильнее обычного? Раздражаешься по мелочам, а сил ни на что не хватает?</p>
+    <p>Многие списывают это на возраст, стресс и недосып и живут так годами. А причина бывает в банальной нехватке железа: у женщин это одна из самых частых историй, просто мало кто связывает с ней своё самочувствие</p>
+    <p><b>Тест не ставит диагноз.</b> Он помогает понять, есть ли у тебя признаки, при которых стоит сдать анализы и разобраться точно</p>
+    <div class="note">Результат теста не заменяет консультацию врача. Точку ставят анализы крови</div>
+    <h3 style="margin-top:32px">Как проходить</h3>
+    <p>Отметь, как часто у тебя бывает каждый признак. Баллы считаются сами</p>
+    <div class="scale">
+      <div><b>0</b>никогда</div><div><b>1</b>редко</div><div><b>2</b>иногда</div><div><b>3</b>часто</div><div><b>4</b>почти всегда</div>
+    </div>
+  </div>
+</section>
+
+<!-- TEST -->
+<div class="progress" id="progress">
+  <div class="wrap">
+    <div class="bar"><i id="bar"></i></div>
+    <small id="progressText">0 из 25</small>
+  </div>
+</div>
+<section class="test" id="test">
+  <div class="wrap">
+    <div id="questions"></div>
+    <div class="test-foot">
+      <button class="btn" id="showResult">Показать мой результат</button>
+      <p class="muted" id="footHint">Ответь на все 25 вопросов, чтобы увидеть разбор</p>
+    </div>
+  </div>
+</section>
+
+<!-- RESULT -->
+<section class="result" id="result">
+  <div class="wrap stack">
+    <div class="card score-card">
+      <span class="kicker">Твой результат</span>
+      <svg class="gauge" viewBox="0 0 300 170" aria-hidden="true">
+        <path d="M30 150 A120 120 0 0 1 270 150" fill="none" stroke="#F4DCE1" stroke-width="22" stroke-linecap="round"/>
+        <path id="gaugeArc" d="M30 150 A120 120 0 0 1 270 150" fill="none" stroke="#7A1631" stroke-width="22" stroke-linecap="round" pathLength="100" stroke-dasharray="0 100"/>
+        <text id="gaugeNum" x="150" y="138" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-weight="800" font-size="56" fill="#7A1631">0</text>
+        <text x="150" y="162" text-anchor="middle" font-family="Manrope, sans-serif" font-size="13" font-weight="700" fill="#7E6269">баллов из 100</text>
+      </svg>
+      <div><span class="band" id="band"></span></div>
+      <p id="bandText"></p>
+      <div class="profile">
+        <div class="tag">Твой профиль</div>
+        <h3 id="profileName"></h3>
+        <p id="profileText" style="margin:0"></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Где сигналов больше всего</h3>
+      <p class="muted" style="font-size:.92rem">Насколько сильно отозвалась каждая зона, по твоим ответам</p>
+      <div class="zones" id="zones"></div>
+    </div>
+
+    <div class="card" id="signalsCard">
+      <h3>На что ты ответила «часто» и «почти всегда»</h3>
+      <p class="muted" style="font-size:.92rem" id="specificity"></p>
+      <ul class="signals" id="signals"></ul>
+    </div>
+
+    <div class="flag hidden" id="flags">
+      <h3>С этим лучше не ждать</h3>
+      <p style="font-size:.95rem">Эти признаки нутрициолог не разбирает вместо врача. Покажись специалисту в ближайшее время:</p>
+      <ul id="flagList"></ul>
+    </div>
+
+    <div>
+      <h3>Что делать дальше</h3>
+      <ol class="steps" id="steps"></ol>
+    </div>
+
+    <div style="text-align:center">
+      <button class="btn ghost" id="restart">Пройти заново</button>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="offer hidden" id="offer">
+  <div class="wrap stack">
+    <div class="offer-hero">
+      <span class="kicker">Следующий шаг</span>
+      <h2>Экспресс-диагностика по железодефициту</h2>
+      <p id="offerLead" style="font-size:1.08rem;margin:0"></p>
+      <svg viewBox="0 0 100 120" aria-hidden="true"><path d="M50 0 C50 0 0 62 0 82 a50 50 0 0 0 100 0 C100 62 50 0 50 0Z" fill="#fff"/></svg>
+    </div>
+
+    <div class="story">
+      <h3>Как это обычно происходит</h3>
+      <p>Женщина замечает, что устаёт сильнее, чем раньше. Волосы остаются на расчёске, ногти слоятся, к обеду хочется лечь. Она сдаёт общий анализ, гемоглобин в норме, и ей говорят «всё хорошо»</p>
+      <p>Дальше витамины для волос, третья чашка кофе, чтобы продержаться до вечера, и ещё год такой жизни. Или другой путь: статья в интернете, первая попавшаяся добавка с железом из аптеки и несколько месяцев приёма наугад</p>
+      <p class="quote">Гемоглобин падает одним из последних. До этого организм долго тратит запасы железа, и всё это время ты уже живёшь с последствиями</p>
+      <p>Поэтому у многих «анализы нормальные», а сил нет. Запасы показывает другой показатель, ферритин, и его часто просто не смотрят</p>
+    </div>
+
+    <div>
+      <h3>Три ошибки, из-за которых железо годами не восстанавливается</h3>
+      <div class="mistakes">
+        <div class="mistake"><div class="x">1</div><b>Смотреть только на гемоглобин</b><p style="margin:6px 0 0;font-size:.95rem">Он может быть в норме, когда запасы уже на нуле. Без ферритина картина неполная</p></div>
+        <div class="mistake"><div class="x">2</div><b>Пить железо «на всякий случай»</b><p style="margin:6px 0 0;font-size:.95rem">Без анализа непонятно, нужно ли оно и в какой дозе. А избыток железа тоже вреден</p></div>
+        <div class="mistake"><div class="x">3</div><b>Есть «железное» и запивать чаем</b><p style="margin:6px 0 0;font-size:.95rem">Чай и кофе рядом с едой мешают железу усваиваться, а из гречки и яблок его усваивается заметно меньше, чем из мяса и печени</p></div>
+      </div>
+    </div>
+
+    <div>
+      <h3>Что будет на экспресс-диагностике</h3>
+      <ol class="steps">
+        <li><b>Разберём твой тест.</b> Людмила посмотрит на твои ответы и отделит признаки, похожие на нехватку железа, от тех, что указывают в другую сторону</li>
+        <li><b>Список анализов под тебя.</b> Что сдать именно в твоей ситуации и как подготовиться, чтобы не пересдавать</li>
+        <li><b>Прочитаем анализы, если они уже есть.</b> Что значат цифры и почему «в пределах нормы» не всегда значит «всё хорошо»</li>
+        <li><b>Питание.</b> Что в твоём меню мешает железу усваиваться и что поменять уже на этой неделе</li>
+        <li><b>Схема поддержки, если она нужна.</b> Питание и подобранные лично тебе БАД «Сибирское здоровье»</li>
+        <li><b>Честно про врача.</b> Если в ответах есть признаки, с которыми нужен врач, Людмила скажет об этом и подскажет, к какому</li>
+      </ol>
+    </div>
+
+    <div>
+      <h3>С чем ты уйдёшь</h3>
+      <ul class="get">
+        <li><svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#3F5E45"/><path d="M5.5 10.5l3 3 6-6.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg>Понимание, стоит ли вообще искать дефицит железа или причина в другом</li>
+        <li><svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#3F5E45"/><path d="M5.5 10.5l3 3 6-6.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg>Конкретный список анализов, с которым можно идти в лабораторию</li>
+        <li><svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#3F5E45"/><path d="M5.5 10.5l3 3 6-6.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg>Изменения в питании, которые можно начать сразу</li>
+        <li><svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#3F5E45"/><path d="M5.5 10.5l3 3 6-6.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg>Понятный план: что делать дальше и к кому идти</li>
+      </ul>
+    </div>
+
+    <div class="expert">
+      <div class="avatar">ЛО</div>
+      <div>
+        <b style="color:var(--wine);font-size:1.1rem">Людмила Овчинникова</b>
+        <p class="muted" style="margin:2px 0 6px;font-size:.92rem">нутрициолог · диплом МИИН</p>
+        <p style="margin:0;font-size:.97rem">Работает с женщинами 40+ и смотрит на питание через сигналы тела: то, что организм показывает раньше, чем это увидит анализ</p>
+      </div>
+    </div>
+
+    <div>
+      <h3>Частые вопросы</h3>
+      <details><summary>Можно я просто куплю железо в аптеке?</summary><p>Можно, но это лотерея. Если дефицита нет, лишнее железо накапливается и вредит. Если есть, важно понять его причину, иначе запасы снова уйдут, как только закончится баночка</p></details>
+      <details><summary>Я сдавала анализ, гемоглобин в норме</summary><p>Это частая ситуация. Гемоглобин показывает, сколько железа работает прямо сейчас, а запасы видны по ферритину. На диагностике разберём, что стоит досдать</p></details>
+      <details><summary>Нутрициолог ставит диагноз?</summary><p>Нет, диагноз ставит врач. Людмила помогает понять, что сдать, как прочитать результат и что поменять в питании, и направляет к врачу, если это нужно</p></details>
+      <details><summary>У меня мало баллов, мне нужна диагностика?</summary><p>Если чувствуешь себя хорошо, нет. Если самочувствие всё равно беспокоит, на диагностике можно разобраться, в чём может быть причина и к кому с этим идти</p></details>
+    </div>
+
+    <div class="cta-box" id="cta">
+      <h2 style="margin-bottom:10px">Записаться на экспресс-диагностику</h2>
+      <p class="muted">Напиши Людмиле в Telegram. Сообщение с твоим результатом уже подготовлено, останется нажать «Отправить»</p>
+      <a class="btn" id="ctaBtn" href="https://t.me/Ovchinnikova_slim" target="_blank" rel="noopener" data-goal="cta_click">Хочу на диагностику</a>
+      <br><button class="copy" id="copyBtn" type="button">Текст не подставился? Скопировать сообщение</button>
+      <small>Telegram: @Ovchinnikova_slim</small>
+    </div>
+  </div>
+</section>
+
+<div class="sticky-cta" id="stickyCta"><a class="btn" href="#cta">Записаться на диагностику</a></div>
+<div class="toast" id="toast">Сообщение скопировано</div>
+
+<footer>
+  <div class="wrap">Людмила Овчинникова · нутрициолог · диплом МИИН<br>Тест носит информационный характер и не является диагнозом</div>
+</footer>
+
+<script>
+// Номер счётчика Яндекс.Метрики. Цели: test_start, test_answer_first, test_complete, cta_click, cta_copy
+var YM_ID = null;
+function goal(name, params){ try{ if(YM_ID && window.ym){ ym(YM_ID,'reachGoal',name,params||{}); } }catch(e){} }
+
+var TG_USER = 'Ovchinnikova_slim';
+
+var Z = {
+  energy:{name:'Энергия и голова', profile:'Батарейка садится к обеду', text:'Железо нужно, чтобы кровь доносила кислород до клеток. Когда его мало, первыми это чувствуют мозг и мышцы: сон не восстанавливает, голова работает медленнее, привычная нагрузка даётся тяжелее'},
+  mood:{name:'Нервы и настроение', profile:'Нервы на пределе', text:'Раздражительность и подавленность без причины часто считают характером или усталостью. Железо участвует в работе нервной системы, и когда его мало, эмоциональный запас тоже становится короче'},
+  looks:{name:'Кожа, волосы, ногти', profile:'Тело показывает снаружи', text:'Волосы, ногти и кожа обновляются постоянно, и при нехватке железа организм экономит на них в первую очередь, сохраняя кислород для важных органов. Поэтому выпадение волос и ломкие ногти бывают заметны, когда гемоглобин ещё в норме'},
+  oxygen:{name:'Кислород и сосуды', profile:'Тело просит кислорода', text:'Холодные руки и ноги, головокружение при резком подъёме, сердцебиение на лестнице: так организм пытается справиться с нехваткой кислорода. Эти признаки стоит проверить у врача, особенно если они появились или усилились недавно'},
+  cravings:{name:'Необычные тяги и аппетит', profile:'Странные желания', text:'Тяга грызть лёд, мел или сырые крупы и любовь к запаху бензина или краски выглядят как причуды. На деле это один из самых характерных признаков нехватки железа, врачи называют его извращением вкуса и обоняния'},
+  mucosa:{name:'Слизистые и защита', profile:'Тонкие места', text:'Заеды в уголках рта, изменения языка, частые простуды: клетки слизистых обновляются быстро и первыми реагируют на нехватку железа'},
+  legs:{name:'Ноги перед сном', profile:'Беспокойные ноги', text:'Желание двигать ногами перед сном, из-за которого трудно уснуть, часто связано с низким ферритином, даже когда гемоглобин в норме. Поэтому при этом признаке смотрят именно запасы железа'},
+  loss:{name:'Потери железа', profile:'Уходит больше, чем приходит', text:'Обильные и длительные месячные у женщин одна из главных причин, по которой железо уходит быстрее, чем успевает восполняться с едой. Здесь нужен и разбор питания, и консультация гинеколога'},
+  other:{name:'Зрение', profile:'', text:''}
+};
+
+var Q = [
+  {t:'Чувствую усталость, даже если нормально сплю', z:'energy'},
+  {t:'Хочется прилечь и поспать днём', z:'energy'},
+  {t:'Раздражаюсь и срываюсь на близких без явного повода', z:'mood'},
+  {t:'Трудно сосредоточиться, мысли «плывут»', z:'energy'},
+  {t:'Настроение подавленное без видимой причины', z:'mood'},
+  {t:'Кожа бледнее, чем обычно', z:'looks', n:'Бледность кожи и слизистых связана с тем, сколько гемоглобина в крови. Заметнее всего на внутренней стороне нижнего века'},
+  {t:'Ногти стали ломкими, слоятся, гнутся', z:'looks', n:'Ломкие и слоящиеся ногти, особенно если они становятся тонкими и прогибаются ложечкой, один из узнаваемых признаков нехватки железа'},
+  {t:'Волосы выпадают сильнее обычного, стали тусклыми', z:'looks', n:'Выпадение волос часто связывают именно с низким ферритином. Витамины для волос тут не помогут, пока не восполнены запасы железа'},
+  {t:'Мёрзнут руки и ноги, даже в тепле', z:'oxygen', n:'Когда кислорода мало, организм в первую очередь греет внутренние органы, и руки с ногами мёрзнут даже в тепле'},
+  {t:'Кружится голова, особенно если резко встать', z:'oxygen'},
+  {t:'Учащается сердцебиение или появляется одышка при обычной нагрузке', z:'oxygen', n:'Сердце начинает работать чаще, чтобы доставить больше кислорода. Этот признак стоит обсудить с врачом, а не только с нутрициологом'},
+  {t:'Тянет съесть что-то странное: лёд, мел, землю, сырое тесто', z:'cravings', n:'Тяга ко льду, мелу, сырым крупам и тесту считается одним из самых специфичных признаков дефицита железа'},
+  {t:'Нравятся необычные запахи (бензин, краска, ацетон)', z:'cravings', n:'Любовь к запахам бензина, краски или ацетона врачи тоже относят к характерным признакам нехватки железа'},
+  {t:'Пропал аппетит или ем через силу', z:'cravings'},
+  {t:'Часто простужаюсь, долго выздоравливаю', z:'mucosa', n:'Железо нужно иммунным клеткам. При его нехватке простуды бывают чаще и тянутся дольше'},
+  {t:'Появляются заеды в уголках рта, трещинки на губах', z:'mucosa', n:'Заеды в уголках рта часто появляются при нехватке железа и витаминов группы B'},
+  {t:'Язык побаливает, краснеет или меняет вид', z:'mucosa', n:'Гладкий, красный или болезненный язык бывает при нехватке железа, B12 и фолиевой кислоты. Анализы покажут, чего именно не хватает'},
+  {t:'Беспокоят ноги перед сном: хочется ими шевелить, трудно уснуть', z:'legs', n:'Синдром беспокойных ног часто связан с низким ферритином. При этом признаке его стоит проверить в первую очередь'},
+  {t:'Тяжело глотать таблетки или твёрдую пищу', z:'mucosa', n:'Затруднённое глотание нельзя списывать только на питание. С этим нужно к врачу'},
+  {t:'Обильные и длительные менструации', z:'loss', n:'Обильные месячные одна из главных причин потери железа у женщин. Здесь нужен и гинеколог, иначе запасы будут уходить снова'},
+  {t:'Мышцы слабые, физическая нагрузка даётся тяжелее, чем раньше', z:'energy'},
+  {t:'Часто болит голова, особенно по утрам', z:'oxygen'},
+  {t:'Шум или звон в ушах', z:'oxygen'},
+  {t:'Кожа сухая, шелушится, появился зуд без высыпаний', z:'looks', n:'Сухость и зуд кожи без высыпаний бывают при нехватке железа, но у этого признака много причин'},
+  {t:'В темноте стало хуже видно', z:'other', n:'Ухудшение зрения в темноте чаще связывают с витамином А, так что это повод проверить и другие дефициты'}
+];
+
+var LABELS = ['никогда','редко','иногда','часто','почти всегда'];
+var SPECIFIC = [6,11,12,15,16,17]; // индексы: ногти, тяги, запахи, заеды, язык, ноги
+var answers = new Array(Q.length).fill(null);
+var firstAnswered = false;
+
+try{ var saved = JSON.parse(localStorage.getItem('zhelezo_answers')||'null'); if(saved && saved.length===Q.length){ answers = saved; } }catch(e){}
+
+var qWrap = document.getElementById('questions');
+Q.forEach(function(q,i){
+  var el = document.createElement('div');
+  el.className = 'q'; el.id = 'q'+i;
+  var html = '<div class="q-title"><span class="q-num">'+(i+1)+'</span><span>'+q.t+'</span></div><div class="opts" role="radiogroup" aria-label="'+q.t+'">';
+  for(var v=0; v<5; v++){ html += '<button type="button" class="opt" role="radio" aria-checked="false" data-i="'+i+'" data-v="'+v+'"><b>'+v+'</b><span>'+LABELS[v]+'</span></button>'; }
+  el.innerHTML = html + '</div>';
+  qWrap.appendChild(el);
+});
+
+qWrap.addEventListener('click', function(e){
+  var b = e.target.closest('.opt'); if(!b) return;
+  var i = +b.dataset.i, v = +b.dataset.v;
+  answers[i] = v;
+  if(!firstAnswered){ firstAnswered = true; goal('test_answer_first'); }
+  try{ localStorage.setItem('zhelezo_answers', JSON.stringify(answers)); }catch(e){}
+  paint();
+  var next = document.getElementById('q'+(i+1));
+  if(next && answers[i+1]===null){ setTimeout(function(){ next.scrollIntoView({behavior:'smooth', block:'center'}); }, 180); }
+});
+
+function paint(){
+  var done = 0, sum = 0;
+  answers.forEach(function(v,i){
+    var el = document.getElementById('q'+i);
+    el.querySelectorAll('.opt').forEach(function(o){ o.setAttribute('aria-checked', +o.dataset.v===v ? 'true':'false'); });
+    el.classList.toggle('done', v!==null);
+    if(v!==null){ el.classList.remove('missed'); done++; sum += v; }
+  });
+  document.getElementById('bar').style.width = (done/Q.length*100)+'%';
+  document.getElementById('progressText').textContent = done+' из '+Q.length+' · '+sum+' б.';
+  document.getElementById('footHint').textContent = done===Q.length ? 'Всё готово, смотри разбор' : 'Осталось ответить: '+(Q.length-done);
+}
+paint();
+
+document.getElementById('showResult').addEventListener('click', function(){
+  var miss = answers.indexOf(null);
+  if(miss!==-1){
+    answers.forEach(function(v,i){ if(v===null) document.getElementById('q'+i).classList.add('missed'); });
+    document.getElementById('q'+miss).scrollIntoView({behavior:'smooth', block:'center'});
+    return;
+  }
+  render();
+});
+
+document.getElementById('restart').addEventListener('click', function(){
+  answers = new Array(Q.length).fill(null);
+  try{ localStorage.removeItem('zhelezo_answers'); }catch(e){}
+  paint();
+  document.getElementById('result').classList.remove('show');
+  document.getElementById('offer').classList.add('hidden');
+  document.getElementById('stickyCta').classList.remove('show');
+  document.getElementById('test').scrollIntoView({behavior:'smooth'});
+});
+
+var lastMessage = '';
+
+function render(){
+  var sum = answers.reduce(function(a,b){ return a+b; },0);
+  var band = sum<=20 ? 'low' : (sum<=45 ? 'mid' : 'high');
+
+  // зоны
+  var zs = {};
+  Q.forEach(function(q,i){ if(!zs[q.z]) zs[q.z] = {s:0,m:0}; zs[q.z].s += answers[i]; zs[q.z].m += 4; });
+  var zoneList = Object.keys(zs).filter(function(k){ return k!=='other'; }).map(function(k){ return {k:k, p:Math.round(zs[k].s/zs[k].m*100)}; });
+  zoneList.sort(function(a,b){ return b.p-a.p; });
+
+  // шкала
+  document.getElementById('gaugeNum').textContent = sum;
+  var arc = document.getElementById('gaugeArc');
+  arc.setAttribute('stroke-dasharray','0 100');
+  setTimeout(function(){ arc.style.transition='stroke-dasharray 1s ease'; arc.setAttribute('stroke-dasharray', sum+' 100'); }, 60);
+
+  var bandEl = document.getElementById('band');
+  bandEl.className = 'band '+band;
+  var B = {
+    low:['0-20 баллов · вероятность невысокая','Признаков, похожих на нехватку железа, у тебя немного. Это хороший ответ, и он тоже важен. Если самочувствие всё равно беспокоит, причину стоит искать в другом месте, и это повод показаться врачу'],
+    mid:['21-45 баллов · есть смысл присмотреться','Часть того, что ты отметила, совпадает с признаками дефицита железа. По тесту наверняка не видно, поэтому следующий шаг простой: сдать общий анализ крови и ферритин и посмотреть на цифры'],
+    high:['46 баллов и выше · признаков много','По совокупности ответов картина похожа на дефицит железа. Это ещё не диагноз, его ставит только анализ крови. Но откладывать проверку не стоит: запасы железа восстанавливаются месяцами, и чем раньше начать, тем раньше вернутся силы']
+  };
+  bandEl.textContent = B[band][0];
+  document.getElementById('bandText').textContent = B[band][1];
+
+  // профиль
+  var top = zoneList[0], second = zoneList[1];
+  var pName, pText;
+  if(band==='low'){
+    pName = 'Спокойная картина';
+    pText = 'Ни одна зона не выделяется. Если хочешь держать руку на пульсе, вернись к тесту через пару месяцев и сравни результат';
+  } else if(top.p>=50){
+    pName = Z[top.k].profile;
+    pText = Z[top.k].text;
+    if(second && second.p>=50){ pText += '. Второй по силе сигнал у тебя в зоне «'+Z[second.k].name.toLowerCase()+'»'; }
+  } else {
+    pName = 'Сигналы понемногу везде';
+    pText = 'Ни одна зона не выделяется резко, признаки рассыпаны по разным системам. Так бывает и при начинающемся дефиците, и при обычной перегрузке, поэтому надёжнее всего посмотреть на анализы';
+  }
+  document.getElementById('profileName').textContent = pName;
+  document.getElementById('profileText').textContent = pText;
+
+  // зоны-бары
+  document.getElementById('zones').innerHTML = zoneList.map(function(z){
+    return '<div class="zone"><div class="zone-top">'+Z[z.k].name+'<span>'+z.p+'%</span></div><div class="bar"><i style="width:'+z.p+'%"></i></div></div>';
+  }).join('');
+
+  // сильные сигналы
+  var strong = [];
+  answers.forEach(function(v,i){ if(v>=3) strong.push(i); });
+  strong.sort(function(a,b){ var sa = SPECIFIC.indexOf(a)>-1?1:0, sb = SPECIFIC.indexOf(b)>-1?1:0; return (sb-sa) || (answers[b]-answers[a]); });
+  var specHits = strong.filter(function(i){ return SPECIFIC.indexOf(i)>-1; });
+  var spec = document.getElementById('specificity');
+  var card = document.getElementById('signalsCard');
+  if(!strong.length){
+    card.classList.remove('hidden');
+    spec.textContent = 'Ни один признак не отмечен как частый. Это хороший знак';
+    document.getElementById('signals').innerHTML = '';
+  } else {
+    card.classList.remove('hidden');
+    if(specHits.length){
+      spec.textContent = 'Среди твоих ответов есть признаки, которые особенно характерны для нехватки железа ('+specHits.length+'). Они стоят первыми';
+    } else {
+      spec.textContent = 'Твои частые признаки общие: они бывают и при нехватке железа, и при недосыпе, и при проблемах со щитовидкой или нехватке B12. По симптомам их не различить, поэтому нужны анализы';
+    }
+    document.getElementById('signals').innerHTML = strong.slice(0,7).map(function(i){
+      var note = Q[i].n || (Z[Q[i].z].name+': этот признак сам по себе не специфичен, но в сочетании с другими добавляет вес общей картине');
+      return '<li><b>'+(i+1)+'. '+Q[i].t+' · '+LABELS[answers[i]]+'</b>'+note+'</li>';
+    }).join('') + (strong.length>7 ? '<li class="muted">И ещё '+(strong.length-7)+' частых признака(ов). Их полезно показать специалисту вместе с остальными</li>' : '');
+  }
+
+  // красные флаги
+  var flags = [];
+  if(answers[10]>=3) flags.push('Сердцебиение или одышка при обычной нагрузке: к терапевту, а при усилении сразу');
+  if(answers[18]>=3) flags.push('Трудно глотать: к терапевту или гастроэнтерологу');
+  if(answers[19]>=3) flags.push('Обильные и длительные месячные: к гинекологу, чтобы найти причину потерь');
+  if(answers[9]>=3) flags.push('Частое головокружение: к терапевту');
+  if(band==='high') flags.push('Сумма баллов высокая: сдай анализы и покажи их терапевту');
+  var fl = document.getElementById('flags');
+  if(flags.length){ fl.classList.remove('hidden'); document.getElementById('flagList').innerHTML = flags.map(function(f){ return '<li>'+f+'</li>'; }).join(''); }
+  else fl.classList.add('hidden');
+
+  // шаги
+  var steps = band==='low' ? [
+    '<b>Если чувствуешь себя хорошо</b>, просто вернись к тесту через пару месяцев',
+    '<b>Если что-то беспокоит</b>, покажись терапевту: причина может быть не в железе',
+    '<b>Хочешь разобраться с питанием</b>, можно прийти к Людмиле на экспресс-диагностику'
+  ] : [
+    '<b>Сдай общий анализ крови и ферритин.</b> Ферритин показывает запасы железа, и он бывает низким при нормальном гемоглобине',
+    '<b>Не начинай пить железо «на всякий случай».</b> Без анализа непонятно, нужно ли оно и сколько, а избыток тоже вреден',
+    '<b>Разберись с результатом вместе со специалистом</b>, чтобы понять причину и что менять в питании'
+  ];
+  document.getElementById('steps').innerHTML = steps.map(function(s){ return '<li>'+s+'</li>'; }).join('');
+
+  // оффер
+  var leads = {
+    low:'Признаков немного, и это хорошая новость. Если самочувствие всё равно не радует, на диагностике можно спокойно разобраться, в чём может быть дело',
+    mid:'Ты уже видишь, что часть признаков совпадает. Дальше самое важное: не гадать, а понять точно. Вот почему многие застревают на этом шаге',
+    high:'Ты сделала первый шаг и увидела, что сигналов много. Дальше обычно начинается самое сложное, и вот почему'
+  };
+  document.getElementById('offerLead').textContent = leads[band];
+
+  lastMessage = 'Здравствуйте, Людмила! Хочу консультацию по железодефициту. Прошла экспресс-тест: '+sum+' баллов'+(band!=='low' && top.p>=50 ? ', больше всего сигналов в зоне «'+Z[top.k].name.toLowerCase()+'»' : '');
+  document.getElementById('ctaBtn').href = 'https://t.me/'+TG_USER+'?text='+encodeURIComponent(lastMessage);
+
+  document.getElementById('result').classList.add('show');
+  document.getElementById('offer').classList.remove('hidden');
+  document.getElementById('stickyCta').classList.add('show');
+  goal('test_complete', {score:sum, band:band, profile:pName});
+  setTimeout(function(){ document.getElementById('result').scrollIntoView({behavior:'smooth'}); }, 50);
+}
+
+document.addEventListener('click', function(e){
+  var g = e.target.closest('[data-goal]'); if(g) goal(g.dataset.goal);
+});
+
+document.getElementById('copyBtn').addEventListener('click', function(){
+  var txt = lastMessage || 'Здравствуйте, Людмила! Хочу консультацию по железодефициту';
+  function ok(){ var t=document.getElementById('toast'); t.classList.add('show'); setTimeout(function(){ t.classList.remove('show'); },1800); goal('cta_copy'); }
+  try{ navigator.clipboard.writeText(txt).then(ok, function(){ prompt('Скопируй сообщение:', txt); }); }catch(e){ prompt('Скопируй сообщение:', txt); }
+});
+
+// прячем липкую кнопку, когда видна основная
+if('IntersectionObserver' in window){
+  var io = new IntersectionObserver(function(en){ en.forEach(function(x){ document.getElementById('stickyCta').style.opacity = x.isIntersecting ? '0' : '1'; document.getElementById('stickyCta').style.pointerEvents = x.isIntersecting ? 'none' : 'auto'; }); });
+  io.observe(document.getElementById('cta'));
+}
+</script>
+</body>
+</html>
