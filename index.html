@@ -52,6 +52,25 @@ section{padding:56px 0}
 .btn:hover{background:var(--wine-2);transform:translateY(-1px)}
 .btn:active{transform:translateY(1px)}
 .inapp{margin-top:14px;background:var(--butter);border:1px solid #F0DDA8;color:var(--butter-ink);border-radius:14px;padding:12px 14px;font-size:.9rem;text-align:left}
+.compare{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:720px){.compare{grid-template-columns:repeat(3,1fr)}}
+.cmp{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:18px}
+.cmp.best{background:var(--wine);border-color:var(--wine);color:#fff}
+.cmp-t{font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.cmp.best .cmp-t{color:#F6DDE3}
+.cmp-v{font-family:"Playfair Display",Georgia,serif;font-size:1.7rem;font-weight:800;color:var(--wine);margin:4px 0 6px}
+.cmp.best .cmp-v{color:#fff}
+.cmp p{margin:0;font-size:.93rem}
+.price-card{text-align:center;background:#fff;border:2px solid var(--wine);border-radius:28px;padding:28px 20px;box-shadow:var(--shadow)}
+.price-t{font-weight:800;color:var(--wine);font-size:1.05rem}
+.price-row{display:flex;justify-content:center;align-items:baseline;gap:14px;margin:10px 0 4px}
+.price-old{font-size:1.3rem;color:var(--muted);text-decoration:line-through}
+.price-big{font-family:"Playfair Display",Georgia,serif;font-size:3rem;font-weight:800;color:var(--wine);line-height:1}
+.price-note{font-size:.95rem;color:var(--ink)}
+.timer{font-family:"Playfair Display",Georgia,serif;font-size:2rem;font-weight:800;color:var(--wine);margin-top:14px;letter-spacing:.04em}
+.timer-l{font-size:.8rem;color:var(--muted);margin-bottom:18px}
+.price-card .btn{width:100%;max-width:420px}
+.price-dis{font-size:.82rem;color:var(--muted);margin:14px 0 0}
 .btn.pdf{background:#3F5E45;box-shadow:0 12px 24px -12px rgba(63,94,69,.7)}
 .btn.pdf:hover{background:#4E7456}
 .actions{display:flex;flex-direction:column;gap:10px;align-items:center;margin-top:22px}
@@ -269,7 +288,7 @@ footer{padding:32px 0 100px;text-align:center;font-size:.85rem;color:var(--muted
       </div>
       <div class="actions">
         <button class="btn pdf" type="button" data-pdf="save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/></svg>Сохранить результат в PDF</button>
-        <a class="btn tg-link" href="https://t.me/Ovchinnikova_slim" target="_blank" rel="noopener" data-goal="cta_click">Записаться на диагностику</a>
+        <a class="btn tg-link" href="https://t.me/Ovchinnikova_slim" target="_blank" rel="noopener" data-goal="cta_click"><span>Записаться за <span class="price-now">990</span> ₽</span></a>
       </div>
       <p class="muted" style="font-size:.85rem;margin:10px 0 0">Сохрани файл и отправь его Людмиле: она посмотрит ответы до встречи</p>
       <div class="inapp hidden" id="inAppHint"><b>Чтобы сохранить PDF</b>, открой эту страницу в обычном браузере: нажми ⋯ или ⋮ вверху справа и выбери «Открыть в Safari» или «Открыть в браузере». Или просто напиши Людмиле кнопкой ниже: все твои ответы уже будут в сообщении</div>
@@ -304,7 +323,7 @@ footer{padding:32px 0 100px;text-align:center;font-size:.85rem;color:var(--muted
     <div style="text-align:center">
       <div class="actions">
         <button class="btn pdf" type="button" data-pdf="save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/></svg>Сохранить результат в PDF</button>
-        <a class="btn tg-link" href="https://t.me/Ovchinnikova_slim" target="_blank" rel="noopener" data-goal="cta_click">Записаться на диагностику</a>
+        <a class="btn tg-link" href="https://t.me/Ovchinnikova_slim" target="_blank" rel="noopener" data-goal="cta_click"><span>Записаться за <span class="price-now">990</span> ₽</span></a>
       </div>
       <br><button class="btn ghost" id="restart">Пройти заново</button>
     </div>
@@ -341,13 +360,24 @@ footer{padding:32px 0 100px;text-align:center;font-size:.85rem;color:var(--muted
     <div>
       <h3>Что будет на экспресс-диагностике</h3>
       <ol class="steps">
-        <li><b>Разберём твой тест.</b> Людмила посмотрит на твои ответы и отделит признаки, похожие на нехватку железа, от тех, что указывают в другую сторону</li>
-        <li><b>Список анализов под тебя.</b> Что сдать именно в твоей ситуации и как подготовиться, чтобы не пересдавать</li>
-        <li><b>Прочитаем анализы, если они уже есть.</b> Что значат цифры и почему «в пределах нормы» не всегда значит «всё хорошо»</li>
-        <li><b>Питание.</b> Что в твоём меню мешает железу усваиваться и что поменять уже на этой неделе</li>
-        <li><b>Схема поддержки, если она нужна.</b> Питание и подобранные лично тебе БАД «Сибирское здоровье»</li>
+        <li><b>Разбор твоего теста и анамнеза.</b> Людмила пройдётся по ответам и расспросит про питание, сон, цикл и самочувствие. Так становится видно, какие признаки похожи на нехватку железа, а какие указывают в другую сторону</li>
+        <li><b>Анализы уже есть?</b> Прочитаете их вместе: что значат цифры и почему «в пределах нормы» не всегда значит «всё хорошо»</li>
+        <li><b>Анализов нет?</b> Получишь список, что сдать именно тебе, и как подготовиться, чтобы не пересдавать</li>
+        <li><b>Первые рекомендации.</b> Что поменять в питании и режиме, чтобы железо усваивалось лучше. Всё это можно внедрить за 1-2 дня, без покупок и сложных схем</li>
+        <li><b>Разбор на руках.</b> После встречи у тебя останутся итоги, список анализов и рекомендации, чтобы не держать всё в голове</li>
         <li><b>Честно про врача.</b> Если в ответах есть признаки, с которыми нужен врач, Людмила скажет об этом и подскажет, к какому</li>
       </ol>
+      <p class="muted" style="font-size:.92rem;margin-top:12px">Если после диагностики захочешь идти дальше вместе, Людмила расскажет о своих программах. Если нет, у тебя всё равно останутся разбор и план</p>
+    </div>
+
+    <div>
+      <h3>Почему это выгодно</h3>
+      <div class="compare">
+        <div class="cmp"><div class="cmp-t">Приём в поликлинике</div><div class="cmp-v">15 минут</div><p>Столько по нормативу Минздрава терапевт тратит на пациента, и в эти же минуты входит оформление документов. К узкому специалисту по ОМС ждать можно до 14 дней</p></div>
+        <div class="cmp"><div class="cmp-t">Платная клиника</div><div class="cmp-v">3 000-4 500 ₽</div><p>Столько стоят экспресс-консультация нутрициолога и приём с разбором анализов в московских клиниках. Первичный приём гематолога от 3 500 до 4 100 ₽</p></div>
+        <div class="cmp best"><div class="cmp-t">Экспресс-диагностика с Людмилой</div><div class="cmp-v"><span class="price-now">990</span> ₽</div><p>Время целиком про тебя, твои ответы Людмила видит заранее, а разбор остаётся на руках. По цене это как один-два анализа на ферритин в лаборатории</p></div>
+      </div>
+      <p class="muted" style="font-size:.85rem;margin-top:10px">Нормы и цены: приказ Минздрава № 290н, программа ОМС, открытые прайсы клиник Москвы, сентябрь 2026</p>
     </div>
 
     <div>
@@ -358,6 +388,16 @@ footer{padding:32px 0 100px;text-align:center;font-size:.85rem;color:var(--muted
         <li><svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#3F5E45"/><path d="M5.5 10.5l3 3 6-6.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg>Изменения в питании, которые можно начать сразу</li>
         <li><svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#3F5E45"/><path d="M5.5 10.5l3 3 6-6.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg>Понятный план: что делать дальше и к кому идти</li>
       </ul>
+    </div>
+
+    <div class="price-card" id="priceCard">
+      <div class="price-t">Экспресс-диагностика по железодефициту</div>
+      <div class="price-row"><span class="price-old" id="priceOld">2 990 ₽</span><span class="price-big"><span class="price-now">990</span> ₽</span></div>
+      <div class="price-note" id="priceNote">Специальная цена для тех, кто прошёл тест. Действует 24 часа</div>
+      <div class="timer" id="timer"><span id="tH">24</span>:<span id="tM">00</span>:<span id="tS">00</span></div>
+      <div class="timer-l" id="timerL">осталось до конца специальной цены</div>
+      <a class="btn tg-link" href="https://t.me/Ovchinnikova_slim" target="_blank" rel="noopener" data-goal="cta_click"><span>Записаться за <span class="price-now">990</span> ₽</span></a>
+      <p class="price-dis">Это не диагноз и не замена врачу. Диагноз ставит врач по анализам. Людмила поможет разобраться в анализах, питании и следующих шагах</p>
     </div>
 
     <div class="expert">
@@ -374,11 +414,12 @@ footer{padding:32px 0 100px;text-align:center;font-size:.85rem;color:var(--muted
       <details><summary>Можно я просто куплю железо в аптеке?</summary><p>Можно, но это лотерея. Если дефицита нет, лишнее железо накапливается и вредит. Если есть, важно понять его причину, иначе запасы снова уйдут, как только закончится баночка</p></details>
       <details><summary>Я сдавала анализ, гемоглобин в норме</summary><p>Это частая ситуация. Гемоглобин показывает, сколько железа работает прямо сейчас, а запасы видны по ферритину. На диагностике разберём, что стоит досдать</p></details>
       <details><summary>Нутрициолог ставит диагноз?</summary><p>Нет, диагноз ставит врач. Людмила помогает понять, что сдать, как прочитать результат и что поменять в питании, и направляет к врачу, если это нужно</p></details>
+      <details><summary>Почему диагностика платная, если тест бесплатный?</summary><p>Тест показывает, есть ли повод разбираться. Диагностика и есть сам разбор: Людмила заранее изучает твои ответы, проводит встречу лично с тобой и оставляет рекомендации на руках. Это её рабочее время и опыт, поэтому оно платное, но в первые 24 часа после теста стоит <span class="price-now">990</span> ₽</p></details>
       <details><summary>У меня мало баллов, мне нужна диагностика?</summary><p>Если чувствуешь себя хорошо, нет. Если самочувствие всё равно беспокоит, на диагностике можно разобраться, в чём может быть причина и к кому с этим идти</p></details>
     </div>
 
     <div class="cta-box" id="cta">
-      <h2 style="margin-bottom:10px">Записаться на экспресс-диагностику</h2>
+      <h2 style="margin-bottom:10px">Записаться на экспресс-диагностику за <span class="price-now">990</span> ₽</h2>
       <p class="muted">Два шага, и Людмила ещё до встречи увидит все твои ответы и сможет сразу назначить время</p>
       <div class="cta-step"><span class="step-n">1</span>Сохрани свой результат в PDF</div>
       <input class="name-in" id="nameIn" type="text" placeholder="Как тебя зовут (для файла)" autocomplete="given-name">
@@ -393,7 +434,7 @@ footer{padding:32px 0 100px;text-align:center;font-size:.85rem;color:var(--muted
   </div>
 </section>
 
-<div class="sticky-cta" id="stickyCta"><a class="btn" href="#cta">Записаться на диагностику</a></div>
+<div class="sticky-cta" id="stickyCta"><a class="btn" href="#priceCard"><span>Диагностика за <span class="price-now">990</span> ₽</span></a></div>
 <div class="toast" id="toast">Сообщение скопировано</div>
 
 <footer>
@@ -611,6 +652,38 @@ document.getElementById('restart').addEventListener('click', function(){
 
 var lastMessage = '';
 var R = null;
+var PRICE_NOW = 990, PRICE_REG = 2990, PROMO_HOURS = 24;
+function fmtPrice(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' '); }
+function promoDeadline(){
+  var d = null;
+  try{ d = +localStorage.getItem('zhelezo_deadline') || null; }catch(e){}
+  if(!d){ d = Date.now() + PROMO_HOURS*3600*1000; try{ localStorage.setItem('zhelezo_deadline', d); }catch(e){} }
+  return d;
+}
+function promoActive(){ return Date.now() < promoDeadline(); }
+function currentPrice(){ return promoActive() ? PRICE_NOW : PRICE_REG; }
+var timerInt = null;
+function paintPrice(){
+  var active = promoActive(), price = currentPrice();
+  document.querySelectorAll('.price-now').forEach(function(el){ el.textContent = fmtPrice(price); });
+  document.getElementById('priceOld').classList.toggle('hidden', !active);
+  document.getElementById('priceOld').textContent = fmtPrice(PRICE_REG)+' ₽';
+  document.getElementById('timer').classList.toggle('hidden', !active);
+  document.getElementById('timerL').classList.toggle('hidden', !active);
+  document.getElementById('priceNote').textContent = active ? 'Специальная цена для тех, кто прошёл тест. Действует 24 часа' : 'Специальная цена после теста закончилась';
+  if(active){
+    var left = Math.max(0, promoDeadline() - Date.now());
+    var hh = Math.floor(left/3600000), mm = Math.floor(left%3600000/60000), ss = Math.floor(left%60000/1000);
+    document.getElementById('tH').textContent = ('0'+hh).slice(-2);
+    document.getElementById('tM').textContent = ('0'+mm).slice(-2);
+    document.getElementById('tS').textContent = ('0'+ss).slice(-2);
+  }
+}
+function startTimer(){
+  var was = promoActive();
+  paintPrice(); clearInterval(timerInt);
+  timerInt = setInterval(function(){ paintPrice(); if(was && !promoActive()){ was = false; if(R) render(); } }, 1000);
+}
 function plural(n,a,b,c){ var m=n%100, k=n%10; if(m>10&&m<20) return c; if(k===1) return a; if(k>1&&k<5) return b; return c; }
 
 function render(){
@@ -719,8 +792,10 @@ function render(){
   };
   document.getElementById('offerLead').textContent = leads[band];
 
+  var dl = promoDeadline(), passed = new Date(dl - PROMO_HOURS*3600*1000);
+  var passedStr = ('0'+passed.getDate()).slice(-2)+'.'+('0'+(passed.getMonth()+1)).slice(-2)+' в '+('0'+passed.getHours()).slice(-2)+':'+('0'+passed.getMinutes()).slice(-2);
   var code = answers.map(function(v,i){ return (i%5===0 && i ? '| ' : '')+v; }).join(' ');
-  lastMessage = 'Здравствуйте, Людмила! Хочу консультацию по железодефициту. Прошла экспресс-тест: '+sum+' '+plural(sum,'балл','балла','баллов')+(band!=='low' && top.p>=50 ? ', больше всего сигналов в зоне «'+Z[top.k].name.toLowerCase()+'»' : '')+'. Мои ответы по порядку: '+code+'. PDF с результатом прикрепляю';
+  lastMessage = 'Здравствуйте, Людмила! Прошла экспресс-тест на железо: '+sum+' '+plural(sum,'балл','балла','баллов')+(band!=='low' && top.p>=50 ? ', больше всего сигналов в зоне «'+Z[top.k].name.toLowerCase()+'»' : '')+'. Мои ответы по порядку: '+code+'. Хочу записаться на экспресс-диагностику за '+fmtPrice(currentPrice())+' ₽ (тест пройден '+passedStr+'). PDF с результатом прикрепляю';
   R = {sum:sum, band:band, bandLabel:B[band][0], bandText:B[band][1], pName:pName, pText:pText, zones:zoneList, flags:flags};
   document.querySelectorAll('.tg-link').forEach(function(a){ a.href = 'https://t.me/'+TG_USER+'?text='+encodeURIComponent(lastMessage); });
 
@@ -729,6 +804,7 @@ function render(){
   document.getElementById('stickyCta').classList.add('show');
   goal('test_complete', {score:sum, band:band, profile:pName});
   pdfBlob = null; pdfPromise = null; setTimeout(preparePdf, 900);
+  startTimer();
   setTimeout(function(){ document.getElementById('result').scrollIntoView({behavior:'smooth'}); }, 50);
 }
 
