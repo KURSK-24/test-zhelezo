@@ -62,7 +62,7 @@ section{padding:56px 0}
 .hero-art{max-width:240px;margin:0 auto}
 .hero p.lead{font-size:1.15rem;color:var(--ink);max-width:560px}
 .author{display:flex;align-items:center;gap:14px;margin-top:28px}
-.avatar{width:52px;height:52px;border-radius:50%;background:var(--wine);color:#fff;display:grid;place-items:center;font-family:"Playfair Display",serif;font-weight:700;font-size:1.1rem;flex:none}
+.avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 0 0 2px var(--rose);background:var(--wine);color:#fff;display:grid;place-items:center;font-family:"Playfair Display",serif;font-weight:700;font-size:1.1rem;flex:none}
 .author b{display:block;color:var(--wine)}
 .author span{font-size:.9rem;color:var(--muted)}
 .facts{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 28px;padding:0;list-style:none}
@@ -180,7 +180,7 @@ footer{padding:32px 0 100px;text-align:center;font-size:.85rem;color:var(--muted
       </ul>
       <a href="#intro" class="btn" data-goal="test_start">Пройти тест</a>
       <div class="author">
-        <div class="avatar">ЛО</div>
+        <img class="avatar" src="ludmila.jpg" alt="Людмила Овчинникова" width="72" height="72">
         <div><b>Людмила Овчинникова</b><span>нутрициолог · диплом МИИН</span></div>
       </div>
     </div>
@@ -329,7 +329,7 @@ footer{padding:32px 0 100px;text-align:center;font-size:.85rem;color:var(--muted
     </div>
 
     <div class="expert">
-      <div class="avatar">ЛО</div>
+      <img class="avatar" src="ludmila.jpg" alt="Людмила Овчинникова" width="72" height="72">
       <div>
         <b style="color:var(--wine);font-size:1.1rem">Людмила Овчинникова</b>
         <p class="muted" style="margin:2px 0 6px;font-size:.92rem">нутрициолог · диплом МИИН</p>
