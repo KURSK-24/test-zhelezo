@@ -673,8 +673,8 @@ document.getElementById('restart').addEventListener('click', function(){
 var lastMessage = '';
 var R = null;
 var PRICE_NOW = 990, PRICE_REG = 2990, PROMO_HOURS = 24;
-// Ссылки на оплату в Продамусе: одна на 990 ₽, вторая на полную цену. Пока пусто, кнопки ведут в Telegram
-var PAY_URL_NOW = '', PAY_URL_REG = '';
+// Ссылки на оплату в Продамусе: одна на 990 ₽, вторая на полную цену. Пустая ссылка = кнопка ведёт в Telegram
+var PAY_URL_NOW = 'https://payform.ru/f7cFXjM/', PAY_URL_REG = '';
 var PAID = /[?&]paid=1/.test(location.search);
 function payUrl(){ return promoActive() ? PAY_URL_NOW : PAY_URL_REG; }
 function fmtPrice(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' '); }
